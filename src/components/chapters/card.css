@@ -1,0 +1,97 @@
+.card {
+    z-index: 10;
+    border-radius: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+}  
+.card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+.info-container{
+    width: 100%;
+}
+.order {
+height: 35px;
+width: 35px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #DDB842;
+font-size: 16px;
+font-weight: 700;
+}
+.title-row {
+    display: flex;
+    flex-direction: row;
+    width: 94%;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4%;
+    padding: 0;
+}
+.title-simple{
+    font-size: 30px;
+    font-weight: 500;
+}
+.title-arabic{
+    font-size: 36px;
+    font-family: 'Uthmanic_Regular';
+    color: #61B198;
+}
+.details-row {
+    display: flex;
+    flex-direction: row;
+    width: 94%;
+    align-items: center;
+    margin-left: 4%;
+    margin-bottom: 15px;
+}
+.details {
+    background-color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-right: 10px;
+    border-radius: 6px;
+    height:24px;
+    width:100px;
+}
+.details-text {
+    font-size: 12px;
+    color: #828282;
+}
+.dot {
+    width:6px;
+    height: 6px;
+    background-color: #828282;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px){
+    .card { 
+        z-index: 10;
+        border-radius: 12px;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: 1px solid #61B198;
+    }
+    .title-simple{
+        font-size: 26px;
+    }
+}

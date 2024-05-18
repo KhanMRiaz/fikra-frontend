@@ -1,0 +1,177 @@
+.background {
+    background-image: url(../../assets/chapters/Background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 20vh;
+    justify-content: center;
+    display: flex;
+    box-shadow: 0px 0px 15px 6px rgba(128,181,162);
+}
+
+.top-right {
+    position: absolute;
+    right: 0;
+    top:0;
+    background-image: url(../../assets/chapters/TopRight.png);
+    background-size: cover;
+    width: 18vw;
+    height: 12vw;
+    z-index: 1;
+}
+
+.quran {
+    position: absolute;
+    left: 4%;
+    top: 3%;
+    background-image: url(../../assets/chapters/Quran.png);
+    background-size: cover;
+    width: 18vw;
+    height: 9vw;
+    z-index: 1;
+}
+
+.arabic-heading {
+    font-family: 'Uthmanic_Regular';
+    font-size: 56px;
+    color: #FED339;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 5%;
+}
+
+.simple-heading {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 10px;
+}
+
+.translated-heading {
+    font-size: 28px;
+    margin-left: 5px;
+}
+
+.verse-list-container {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+.buttons-container {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    justify-content: space-between;
+}
+.button {
+    background-color: #61B198;
+    padding: 20px 30px;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+}
+.button-disabled {
+    background-color: rgba(97,177,152,0.5);
+    padding: 20px 30px;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+}
+
+.header{
+    display: none;
+}
+.simple-heading-mobile{
+    display: none;
+}
+.translated-heading-mobile{
+    display: none;
+}
+
+@media only screen and (max-width: 768px){
+    .background {
+        box-shadow: none;
+    }    
+    .header{
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+    }
+    .back-icon {
+        background-image: url(../../assets/verses/BackIcon.png);
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+    }
+    .top-heading-container {
+        text-align: center;
+    }
+    .top-heading-surah {
+        font-weight: 700;
+    }
+    .top-heading-details {
+        font-size: 13px;
+        color: #6D6C6C;
+    }
+    .grid-icon {
+        background-image: url(../../assets/verses/GridIcon.png);
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+    }
+    .quran {
+        position: absolute;
+        left: -4%;
+        top: 7%;
+        background-image: url(../../assets/chapters/Quran.png);
+        background-size: cover;
+        width: 64vw;
+        height: 32vw;
+    }
+    .top-right {
+        position: absolute;
+        right: 0;
+        top: 6%;
+        background-image: url(../../assets/chapters/TopRight.png);
+        background-size: cover;
+        width: 39vw;
+        height: 30vw;
+    }
+    .arabic-heading {
+        font-family: 'Uthmanic_Regular';
+        font-size: 36px;
+        color: #FED339;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 5%;
+    }
+    .simple-heading {
+        display: none;
+    }
+    .simple-heading-mobile {
+        display: flex;
+        font-weight: 700;
+        margin-bottom: 10%;
+        font-size: 20px;
+    }
+    .translated-heading-mobile {
+        display: block;
+        font-size: 18px;
+        color: white;
+        text-align: center;
+    }
+}

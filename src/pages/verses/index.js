@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { Audio } from 'react-loader-spinner'
 import { getVersesByPage } from '../../api/verses/versesByPage'
 import Verse from '../../components/verses/verse'
 import './index.css'
@@ -13,6 +14,7 @@ const Verses = () => {
   const [lastPage, setLastPage] = useState(null)
   const [currentPage, setCurrentPage] = useState(null)
   const [verses, setVerses] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
 
   useEffect(()=>{
@@ -33,9 +35,11 @@ const Verses = () => {
       res = await res.json()
       setVerses(res)
       window.scrollTo(0, 0)
+      setIsLoading(false)
     }
     catch(e){
       console.warn(e)
+      setIsLoading(false)
     }
   }
 
@@ -72,20 +76,23 @@ const Verses = () => {
         <div className='quran'/>
       </div>
       {/* list */}
-      <div className='verse-list-container'>
-        {verses.length && verses.map((verse)=><Verse key={verse.id} verse={verse}/>)} 
-      </div>
-      <div className='buttons-container'>
-        <button 
-          onClick={handleNext} 
-          className={currentPage === lastPage ? 'button-disabled' : 'button'} 
-          disabled={currentPage === lastPage}>Next</button>
-        <button 
-          onClick={handlePrev} 
-          className={currentPage === firstPage ? 'button-disabled' : 'button'} 
-          disabled={currentPage === firstPage}>Prev</button>
-      </div>
-      
+      {isLoading ? <Audio height="120" width="120" radius="9" color='#61B198' ariaLabel="loading" wrapperStyle wrapperClass/>
+      : <>
+          <div className='verse-list-container'>
+            {verses.length && verses.map((verse)=><Verse key={verse.id} verse={verse}/>)} 
+          </div>
+          <div className='buttons-container'>
+            <button 
+              onClick={handleNext} 
+              className={currentPage === lastPage ? 'button-disabled' : 'button'} 
+              disabled={currentPage === lastPage}>Next</button>
+            <button 
+              onClick={handlePrev} 
+              className={currentPage === firstPage ? 'button-disabled' : 'button'} 
+              disabled={currentPage === firstPage}>Prev</button>
+          </div>
+        </>
+      }
     </div>
   )
 }

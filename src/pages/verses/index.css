@@ -126,6 +126,7 @@
     .top-heading-details {
         font-size: 13px;
         color: #6D6C6C;
+        font-weight: 400;
     }
     .grid-icon {
         background-image: url(../../assets/verses/GridIcon.png);
@@ -163,10 +164,11 @@
         display: none;
     }
     .simple-heading-mobile {
-        display: flex;
+        display: block;
         font-weight: 700;
         margin-bottom: 10%;
         font-size: 20px;
+        text-align: center;
     }
     .translated-heading-mobile {
         display: block;
